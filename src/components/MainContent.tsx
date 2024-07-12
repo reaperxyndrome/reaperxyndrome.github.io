@@ -3,6 +3,8 @@ import URL1 from '../assets/portfolio-3.png';
 import URL2 from '../assets/portfolio-4.png';
 import URL3 from '../assets/portfolio-5.png';
 import URL4 from '../assets/portfolio-6.png';
+import URL5 from '../assets/portfolio-7.png';
+import URL6 from '../assets/portfolio-8.png';
 
 interface PortfolioContentProps {
     title: string;
@@ -20,7 +22,7 @@ const PortfolioContent: React.FC<PortfolioContentProps> = ({ title, description,
                 <h2 className='mb-5 text-3xl font-bold'>{title}</h2>
                 <p className=' w-96'>{description}</p>
                 <p className='mb-5 mt-5'>{date}</p>
-                <div className='flex flex-wrap gap-x-2'>
+                <div className='flex flex-wrap gap-x-2 gap-y-3'>
                     {tags.map((tag) => (
                         <span key={tag} className='bg-gray-300 p-1 rounded-m text-black rounded-md'>{tag}</span>
                     ))}
@@ -37,6 +39,47 @@ const PortfolioContent: React.FC<PortfolioContentProps> = ({ title, description,
 
 const dummyPortfolioData: PortfolioContentProps[] = [
     {
+        title: "Frontend Mentor - MyTeam Multi-Page Website",
+        description:
+            <React.Fragment>
+                My first full-scale website that I deployed. This is a website for an example service-based company that offers coaching services to build dynamic teams made up of global talent.
+                <ul>
+                    <li>- Part of Frontend Mentor Projects</li>
+                    <li>- Built with Tailwind CSS</li>
+                    <li>- Built with Next.js</li>
+                    <li>- Fluid design using clamp() function in CSS</li>
+                    <li>- Features a contact form with form validation</li>
+                    <li>- Responsive design with burger menu for the navbar, opens up a dialog box and an overlay that darkens the content when tapped on small screens.</li>
+                </ul>
+            </React.Fragment>,
+        imageUrl: URL5,
+        link: "https://frontend-mentor-xi-roan.vercel.app/myteam-multi-page-website",
+        date: "Nov 2023 - Dec 2023",
+        tags: ['React', "Next.js", 'Tailwind CSS', 'TypeScript', 'Frontend Development']
+    },
+    {
+        title: "Frontend Mentor - Single Page Design Portfolio",
+        description:
+            <React.Fragment>
+                An example website to showcase designer portfolio to promote personal branding.
+                <ul>
+                    <li> - Part of Frontend Mentor projects </li>
+                    <li> - Built with Tailwind CSS </li>
+                    <li> - Built with Next.js </li>
+                    <li> - Fluid design using clamp() function in CSS</li>
+                    <li> - Skills section made using automatically aligning Grid in CSS</li>
+                    <li> - Custom JavaScript image slider, features:</li>
+                    <li className='ml-5'>1. Auto position images to center each time the browser is resized.</li>
+                    <li className='ml-5'>2. Can be dragged both on screen or on mobile devices </li>
+                    <li className='ml-5'>3. Has arrow buttons to swipe each image to the left or right.</li>
+                </ul>
+            </React.Fragment>,
+        imageUrl: URL6,
+        link: "https://frontend-mentor-xi-roan.vercel.app/single_page_design_portfolio",
+        date: "Jul 2023 - Aug 2023",
+        tags: ['TailwindCSS', 'Next.js', 'React.js']
+    },
+    {
         title: "Frontend Mentor - Stats Preview Card Component",
         description:
             <React.Fragment>
@@ -47,7 +90,6 @@ const dummyPortfolioData: PortfolioContentProps[] = [
                     <li> - Built with Tailwind CSS </li>
                 </ul>
             </React.Fragment>,
-        // imageUrl: "src/assets/portfolio-3.png",
         imageUrl: URL1,
         link: "https://stats-preview-card-component-omega.vercel.app/",
         date: "Jul 2023 - Jul 2023",
