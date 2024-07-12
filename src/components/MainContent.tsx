@@ -17,18 +17,18 @@ interface PortfolioContentProps {
 
 const PortfolioContent: React.FC<PortfolioContentProps> = ({ title, description, imageUrl, link, date, tags }) => {
     return (
-        <div className='flex gap-x-3 rounded-md p-5 text-white w-1/2 justify-between shadow-xl shadow-slate-700 hover:scale-105 '>
-            <div>
-                <h2 className='mb-5 text-3xl font-bold'>{title}</h2>
-                <div className=' w-96 h-40 overflow-auto'>{description}</div>
+        <div className='flex max-lg:flex-col gap-x-3 rounded-md p-5 text-white max-w-2xl justify-between shadow-xl shadow-slate-700 hover:scale-105 '>
+            <div className='max-lg:order-2 max-lg:flex max-lg:flex-col max-lg:items-center'>
+                <h2 className='mb-5 text-3xl font-bold max-lg:text-center'>{title}</h2>
+                <div className=' max-w-96 h-40 overflow-auto'>{description}</div>
                 <p className='mb-5 mt-5'>{date}</p>
-                <div className='flex flex-wrap gap-x-2 gap-y-3'>
+                <div className='flex flex-wrap max-lg:justify-center gap-x-2 gap-y-3'>
                     {tags.map((tag) => (
                         <span key={tag} className='bg-gray-300 p-1 rounded-m text-black rounded-md'>{tag}</span>
                     ))}
                 </div>
             </div>
-            <div className='flex items-center cursor-pointer'>
+            <div className='flex items-center max-lg:justify-center cursor-pointer max-lg:mb-10'>
                 <a href={link}>
                     <img src={imageUrl} alt={title} className='rounded-2xl min-w-48 max-w-48 h-48 object-cover' />
                 </a>

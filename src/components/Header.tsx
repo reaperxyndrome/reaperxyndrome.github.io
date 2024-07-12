@@ -25,8 +25,8 @@ export default function Header() {
         typeSpeed: 20,
     })
     return (
-        <section className='flex justify-between mt-20'>
-            <section className='flex flex-col gap-y-12'>
+        <section className='flex max-lg:flex-col max-lg:items-center justify-between mt-20'>
+            <section className='flex flex-col gap-y-12 max-lg:mb-20'>
                 <section className='flex flex-col gap-y-3 w-fit p-10 rounded-lg shadow-xl shadow-slate-700'>
                     <h1 className=' text-6xl font-bold'>{name} <Cursor /></h1>
                     <h2>{title} <Cursor /></h2>
@@ -37,17 +37,16 @@ export default function Header() {
                         {desc}
                         <Cursor />
                     </p>
-
                 </div>
 
             </section>
-            <section className='grid grid-cols-3 grid-rows-[repeat(2,200px)] gap-x-20 gap-y-20 justify-center items-center'>
-                <StackIcon className='w-32 h-fit' name="figma" />
-                <StackIcon className='w-32 h-fit' name="reactjs" />
-                <StackIcon className='w-32 h-fit' name="vitejs" />
-                <StackIcon className='w-32 h-fit bg-white p-3 rounded-full' name="nextjs" />
-                <StackIcon className='w-32 h-fit' name="tailwindcss" />
-                <StackIcon className='w-32 h-fit' name="python" />
+            <section className='grid grid-cols-3 min-lg:grid-rows-[repeat(2,200px)] max-lg:grid-rows-[repeat(2, 140px)] gap-x-20 max-lg:gap-x-12 gap-y-20 max-lg:gap-y-12 justify-center items-center'>
+                <StackIcon className='w-32 max-lg:w-28 h-fit' name="figma" />
+                <StackIcon className='w-32 max-lg:w-28 h-fit' name="reactjs" />
+                <StackIcon className='w-32 max-lg:w-28 h-fit' name="vitejs" />
+                <StackIcon className='w-32 max-lg:w-28 h-fit bg-white p-3 rounded-full' name="nextjs" />
+                <StackIcon className='w-32 max-lg:w-28 h-fit' name="tailwindcss" />
+                <StackIcon className='w-32 max-lg:w-28 h-fit' name="python" />
             </section>
         </section>
     )
