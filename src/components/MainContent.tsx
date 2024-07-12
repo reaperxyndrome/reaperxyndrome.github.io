@@ -20,7 +20,7 @@ const PortfolioContent: React.FC<PortfolioContentProps> = ({ title, description,
         <div className='flex gap-x-3 rounded-md p-5 text-white w-1/2 justify-between shadow-xl shadow-slate-700 hover:scale-105 '>
             <div>
                 <h2 className='mb-5 text-3xl font-bold'>{title}</h2>
-                <p className=' w-96'>{description}</p>
+                <div className=' w-96 h-40 overflow-auto'>{description}</div>
                 <p className='mb-5 mt-5'>{date}</p>
                 <div className='flex flex-wrap gap-x-2 gap-y-3'>
                     {tags.map((tag) => (
