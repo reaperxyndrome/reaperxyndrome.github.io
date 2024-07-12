@@ -5,7 +5,7 @@ export default function Navbar() {
             <h1>Logo</h1>
             <section className="flex justify-between gap-10">
                 <h2 className="cursor-pointer">About</h2>
-                <h2 className="cursor-pointer">Portfolio</h2>
+                <a href="#portfolio"><h2 className="cursor-pointer">Portfolio</h2></a>
             </section>
         </nav>
     )

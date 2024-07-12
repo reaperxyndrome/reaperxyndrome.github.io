@@ -123,7 +123,7 @@ const dummyPortfolioData: PortfolioContentProps[] = [
 
 const MainContent: React.FC = () => {
     return (
-        <div className='flex flex-col items-center mt-20 mb-20'>
+        <div className='flex flex-col items-center mt-20 mb-20' id='portfolio'>
             <h1 className='text-center text-5xl font-semibold mb-10'>My Portfolio</h1>
             <div className='flex flex-wrap gap-x-10 gap-y-10 items-center justify-center'>
                 {dummyPortfolioData.map((portfolio) => (
