@@ -2,15 +2,16 @@ import React from 'react';
 
 interface PortfolioContentProps {
     title: string;
-    description: string;
+    description: React.ReactNode;
     imageUrl: string;
+    link?: string;
     date: string;
     tags: string[]
 }
 
-const PortfolioContent: React.FC<PortfolioContentProps> = ({ title, description, imageUrl, date, tags }) => {
+const PortfolioContent: React.FC<PortfolioContentProps> = ({ title, description, imageUrl, link, date, tags }) => {
     return (
-        <div className='flex gap-x-3 rounded-md p-5 text-white w-1/2 justify-between shadow-xl shadow-slate-700 hover:scale-105 cursor-pointer'>
+        <div className='flex gap-x-3 rounded-md p-5 text-white w-1/2 justify-between shadow-xl shadow-slate-700 hover:scale-105 '>
             <div>
                 <h2 className='mb-5 text-3xl font-bold'>{title}</h2>
                 <p className=' w-96'>{description}</p>
@@ -21,8 +22,10 @@ const PortfolioContent: React.FC<PortfolioContentProps> = ({ title, description,
                     ))}
                 </div>
             </div>
-            <div className='flex items-center'>
-                <img src={imageUrl} alt={title} className='rounded-2xl w-48 h-48' />
+            <div className='flex items-center cursor-pointer'>
+                <a href={link}>
+                    <img src={imageUrl} alt={title} className='rounded-2xl min-w-48 max-w-48 h-48 object-cover' />
+                </a>
             </div>
         </div>
     );
@@ -30,25 +33,44 @@ const PortfolioContent: React.FC<PortfolioContentProps> = ({ title, description,
 
 const dummyPortfolioData: PortfolioContentProps[] = [
     {
-        title: "Portfolio 4",
-        description: "This is the fourth portfolio. It was created using React and TypeScript. It showcases the use of modern web development techniques.",
-        imageUrl: "https://via.placeholder.com/150",
-        date: "2022-01-01",
-        tags: ['React', 'TypeScript']
+        title: "Frontend Mentor - Stats Preview Card Component",
+        description:
+            <React.Fragment>
+                A stats preview card component to preview statistics to promote a website to a particular audience.
+                <ul>
+                    <li> - Part of Frontend Mentor projects </li>
+                    <li> - Built with Next.js </li>
+                    <li> - Built with Tailwind CSS </li>
+                </ul>
+            </React.Fragment>,
+        imageUrl: "src/assets/portfolio-3.png",
+        link: "https://stats-preview-card-component-omega.vercel.app/",
+        date: "Jul 2023 - Jul 2023",
+        tags: ['Frontend Mentor', 'Next.js', 'Tailwind CSS']
     },
     {
-        title: "Portfolio 5",
+        title: "ReMask Web Design in Figma",
+        description: "ReMask prototype design. It was part of Entrepreneurship Hatchery course. Although the app is not built yet, we successfully built a working user interface in figma. ReMask is intended to be an app for a company that sells products based on recycled masks.",
+        imageUrl: "src/assets/portfolio-4.png",
+        link: "https://www.figma.com/file/Tpf9Y8wB2WFhGX8c34eCc5/ReMask---Prototype-Website",
+        date: "Jan 2022 - Mar 2022",
+        tags: ['Figma', 'Web Design']
+    },
+    {
+        title: "Starbucks Homepage Replica in WebFlow",
         description: "This is the fifth portfolio. It was also created using React and TypeScript. It demonstrates the ability to create complex user interfaces with React. The project was completed on 2022-02-01.",
-        imageUrl: "https://via.placeholder.com/150",
-        date: "2022-02-01",
-        tags: ['React', 'TypeScript']
+        imageUrl: "src/assets/portfolio-5.png",
+        link: "https://starbucks-home-page.webflow.io/",
+        date: "Jul 2021 - Sep 2021",
+        tags: ['Webflow', 'Frontend Development']
     },
     {
-        title: "Portfolio 6",
-        description: "This is the sixth portfolio. It was completed on 2022-03-01 and was created using React, TypeScript, and other technologies. It showcases the ability to create scalable and maintainable codebases. The project was a great learning experience and helped improve my skills in these technologies.",
-        imageUrl: "https://via.placeholder.com/150",
-        date: "2022-03-01",
-        tags: ["React, TypeScript", "Hello", "Hey"]
+        title: "Personal Portfolio Website Design in Figma",
+        description: "This is an initial figma design for my personal portfolio website.",
+        imageUrl: "src/assets/portfolio-6.png",
+        link: "https://www.figma.com/file/dLbuBn4GSVn42QabN2tPAL/Portfolio-Website-Draft",
+        date: "Mar 2021 - May 2021",
+        tags: ["Figma", "Web Design"]
     }
 ];
 
@@ -63,6 +85,7 @@ const MainContent: React.FC = () => {
                         title={portfolio.title}
                         description={portfolio.description}
                         imageUrl={portfolio.imageUrl}
+                        link={portfolio.link}
                         date={portfolio.date}
                         tags={portfolio.tags}
                     />
