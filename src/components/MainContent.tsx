@@ -1,4 +1,8 @@
 import React from 'react';
+import URL1 from '../assets/portfolio-3.png';
+import URL2 from '../assets/portfolio-4.png';
+import URL3 from '../assets/portfolio-5.png';
+import URL4 from '../assets/portfolio-6.png';
 
 interface PortfolioContentProps {
     title: string;
@@ -43,7 +47,8 @@ const dummyPortfolioData: PortfolioContentProps[] = [
                     <li> - Built with Tailwind CSS </li>
                 </ul>
             </React.Fragment>,
-        imageUrl: "src/assets/portfolio-3.png",
+        // imageUrl: "src/assets/portfolio-3.png",
+        imageUrl: URL1,
         link: "https://stats-preview-card-component-omega.vercel.app/",
         date: "Jul 2023 - Jul 2023",
         tags: ['Frontend Mentor', 'Next.js', 'Tailwind CSS']
@@ -51,7 +56,7 @@ const dummyPortfolioData: PortfolioContentProps[] = [
     {
         title: "ReMask Web Design in Figma",
         description: "ReMask prototype design. It was part of Entrepreneurship Hatchery course. Although the app is not built yet, we successfully built a working user interface in figma. ReMask is intended to be an app for a company that sells products based on recycled masks.",
-        imageUrl: "src/assets/portfolio-4.png",
+        imageUrl: URL2,
         link: "https://www.figma.com/file/Tpf9Y8wB2WFhGX8c34eCc5/ReMask---Prototype-Website",
         date: "Jan 2022 - Mar 2022",
         tags: ['Figma', 'Web Design']
@@ -59,7 +64,7 @@ const dummyPortfolioData: PortfolioContentProps[] = [
     {
         title: "Starbucks Homepage Replica in WebFlow",
         description: "This is the fifth portfolio. It was also created using React and TypeScript. It demonstrates the ability to create complex user interfaces with React. The project was completed on 2022-02-01.",
-        imageUrl: "src/assets/portfolio-5.png",
+        imageUrl: URL3,
         link: "https://starbucks-home-page.webflow.io/",
         date: "Jul 2021 - Sep 2021",
         tags: ['Webflow', 'Frontend Development']
@@ -67,7 +72,7 @@ const dummyPortfolioData: PortfolioContentProps[] = [
     {
         title: "Personal Portfolio Website Design in Figma",
         description: "This is an initial figma design for my personal portfolio website.",
-        imageUrl: "src/assets/portfolio-6.png",
+        imageUrl: URL4,
         link: "https://www.figma.com/file/dLbuBn4GSVn42QabN2tPAL/Portfolio-Website-Draft",
         date: "Mar 2021 - May 2021",
         tags: ["Figma", "Web Design"]
