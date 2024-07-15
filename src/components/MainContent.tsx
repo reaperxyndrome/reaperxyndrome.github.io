@@ -133,7 +133,15 @@ const dummyPortfolioData: PortfolioContentProps[] = [
 const MainContent: React.FC = () => {
     return (
         <div className='flex flex-col items-center mt-20 mb-20' id='portfolio'>
-            <h1 className='text-center text-5xl font-semibold mb-10'>My Portfolio</h1>
+            <motion.h1
+                className='text-center text-5xl font-semibold mb-10'
+                initial={{ opacity: 0, x: -150 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.5 }}
+            >
+                My Portfolio
+            </motion.h1>
             <div className='flex flex-wrap gap-x-10 gap-y-10 items-center justify-center'>
                 {dummyPortfolioData.map((portfolio) => (
                     <PortfolioContent
