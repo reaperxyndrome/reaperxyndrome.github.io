@@ -5,6 +5,7 @@ import URL3 from '../assets/portfolio-5.png';
 import URL4 from '../assets/portfolio-6.png';
 import URL5 from '../assets/portfolio-7.png';
 import URL6 from '../assets/portfolio-8.png';
+import { motion } from 'framer-motion';
 
 interface PortfolioContentProps {
     title: string;
@@ -17,7 +18,15 @@ interface PortfolioContentProps {
 
 const PortfolioContent: React.FC<PortfolioContentProps> = ({ title, description, imageUrl, link, date, tags }) => {
     return (
-        <div className='flex max-lg:flex-col gap-x-3 rounded-md p-5 text-white max-w-2xl justify-between shadow-xl shadow-slate-700 hover:scale-105 '>
+        <motion.div
+            className='flex max-lg:flex-col gap-x-3 rounded-md p-5 
+            text-white max-w-2xl justify-between
+            shadow-xl shadow-slate-700 hover:scale-105 '
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5 }}
+        >
             <div className='max-lg:order-2 max-lg:flex max-lg:flex-col max-lg:items-center'>
                 <h2 className='mb-5 text-3xl font-bold max-lg:text-center'>{title}</h2>
                 <div className=' max-w-96 h-40 overflow-auto'>{description}</div>
@@ -33,7 +42,7 @@ const PortfolioContent: React.FC<PortfolioContentProps> = ({ title, description,
                     <img src={imageUrl} alt={title} className='rounded-2xl min-w-48 max-w-48 h-48 object-cover' />
                 </a>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
