@@ -1,6 +1,14 @@
+import { motion } from "framer-motion";
+
 export default function Footer() {
     return (
-        <footer className="bg-white rounded-lg shadow-xl m-4 dark:bg-black shadow-slate-500">
+        <motion.footer
+            className="bg-white rounded-lg shadow-xl m-4 dark:bg-black shadow-slate-500"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+        >
             <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
                 <span
                     className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
@@ -25,6 +33,6 @@ export default function Footer() {
                     </li>
                 </ul>
             </div>
-        </footer>
+        </motion.footer>
     )
 }
