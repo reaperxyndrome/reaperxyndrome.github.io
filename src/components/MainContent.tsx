@@ -22,8 +22,8 @@ const PortfolioContent: React.FC<PortfolioContentProps> = ({ title, description,
             className='flex max-lg:flex-col gap-x-3 rounded-md p-5 
             text-white max-w-2xl justify-between
             shadow-xl shadow-slate-700 hover:scale-105 '
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, x: -150 }}
+            whileInView={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }}
         >

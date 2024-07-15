@@ -5,10 +5,10 @@ export default function Navbar() {
 
         <motion.nav className="flex justify-between items-center p-3 px-7 mb-10 h-20
          text-white rounded-lg shadow-xl shadow-slate-500"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1 }}
         >
             <h1>Logo</h1>
             <section className="flex justify-between gap-10">
